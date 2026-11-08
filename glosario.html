@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario de Automatización y PLCs</title>
+    <!-- Asumiendo que usarás el mismo archivo de estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1> Autómatas y relés programables</h1>
+        <p>Práctica 6: Instalación domótica de vivienda. Glosario</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Práctica 6 (Domótica)</a></li>
+            <li><a href="rubrica_6.html">Rúbrica evaluación</a></li>
+            <li><a href="automata_6.html">Autómata programable</a></li>
+            <li><a href="logo_6.html">Logo</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li class="active"><a href="glosario.html">Glosario</a></li>
+            <li><a href="prl.html">Seguridad y PRL</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Glosario de Términos Clave en Automatización</h2>
+
+        <p>Este glosario incluye los términos técnicos más importantes relacionados con los Autómatas Programables y los sistemas de control industrial.</p>
+
+        <hr>
+
+        <dl class="glosario-list">
+            
+            <dt><strong>Actuador</strong></dt>
+            <dd>Dispositivo que convierte una señal eléctrica (salida del PLC) en una acción física, como movimiento, calor o luz. Ejemplos: motores, válvulas, luces piloto.</dd>
+
+            <dt><strong>Autómata Programable (PLC)</strong></dt>
+            <dd>Controlador Lógico Programable. Computadora industrial diseñada para controlar procesos secuenciales en tiempo real en entornos industriales exigentes.</dd>
+
+            <dt><strong>Bus de Comunicación</strong></dt>
+            <dd>Conjunto de líneas internas que permiten la transferencia de datos, direcciones e instrucciones entre la CPU, la memoria y los módulos de I/O de un PLC.</dd>
+
+            <dt><strong>Ciclo de Scan</strong></dt>
+            <dd>Proceso continuo y cíclico que realiza el PLC: 1) Leer Entradas, 2) Ejecutar el Programa, 3) Escribir Salidas, 4) Realizar tareas de autodiagnóstico/comunicación. El tiempo del ciclo se mide en milisegundos.</dd>
+
+            <dt><strong>CPU (Central Processing Unit)</strong></dt>
+            <dd>Unidad Central de Procesamiento. El "cerebro" del PLC que ejecuta el programa de control.</dd>
+
+            <dt><strong>Diagrama de Escalera (Ladder Diagram - LD)</strong></dt>
+            <dd>Uno de los lenguajes de programación del PLC (estándar IEC 61131-3). Es gráfico y simula la lógica de control cableada tradicional mediante contactos y bobinas.</dd>
+            
+            <dt><strong>Entradas/Salidas (I/O)</strong></dt>
+            <dd>Abreviatura de Inputs/Outputs. Son las interfaces que conectan el PLC con los dispositivos de campo. Las entradas reciben señales; las salidas envían señales de control.</dd>
+            
+            <dt><strong>Grafcet (SFC - Sequential Function Chart)</strong></dt>
+            <dd>Lenguaje de programación gráfico (estándar IEC 61131-3) basado en etapas y transiciones. Es ideal para procesos que siguen una secuencia clara.</dd>
+
+            <dt><strong>HMI (Human-Machine Interface)</strong></dt>
+            <dd>Interfaz Hombre-Máquina. Pantallas táctiles o paneles que permiten a los operadores interactuar con el PLC para monitorear y controlar el proceso.</dd>
+
+            <dt><strong>LOTO (Lockout/Tagout)</strong></dt>
+            <dd>Procedimiento de seguridad que consiste en bloquear y etiquetar las fuentes de energía de una máquina para evitar su activación accidental durante el mantenimiento.</dd>
+
+            <dt><strong>Modularidad</strong></dt>
+            <dd>Característica de los PLCs que permite ampliar el hardware (I/O, memoria, comunicación) mediante la adición de módulos en un *rack* o *backplane*.</dd>
+
+            <dt><strong>Relé Programable</strong></dt>
+            <dd>Controlador lógico compacto y de bajo coste, con I/O y memoria limitadas. Se utiliza para reemplazar relés, temporizadores y contadores en aplicaciones sencillas (ej. domótica).</dd>
+
+            <dt><strong>Sensor</strong></dt>
+            <dd>Dispositivo que detecta un evento físico (presencia, temperatura, presión) y lo convierte en una señal eléctrica para la entrada del PLC.</dd>
+
+            <dt><strong>SCADA (Supervisory Control and Data Acquisition)</strong></dt>
+            <dd>Sistema de software utilizado para la supervisión, control remoto y adquisición de datos en tiempo real de grandes instalaciones o procesos distribuidos.</dd>
+
+        </dl>
+    </div>
+
+</body>
+</html>

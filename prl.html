@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevención de Riesgos Laborales en Automatización</title>
+    <!-- Asumiendo que usarás el mismo archivo de estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1> Autómatas y relés programables</h1>
+        <p>Práctica 6: Instalación domótica de vivienda. PRL</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Práctica 6 (Domótica)</a></li>
+            <li><a href="rubrica_6.html">Rúbrica evaluación</a></li>
+            <li><a href="automata_6.html">Autómata programable</a></li>
+            <li><a href="logo_6.html">Logo</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+            <li class="active"><a href="prl.html">Seguridad y PRL</a></li>
+            
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Prevención de Riesgos Laborales (PRL) en Sistemas con PLCs</h2>
+
+        <p>Aunque los autómatas programables están diseñados para mejorar la seguridad al automatizar tareas peligrosas, su <strong>mala implementación, programación o mantenimiento</strong> puede generar riesgos. La seguridad en automatización no se limita al PLC, sino a la interacción entre este y la maquinaria.</p>
+
+        <hr>
+
+        <h3>1. Riesgos Eléctricos</h3>
+        <p>Los PLCs requieren conexión a la red eléctrica y manejan señales de alta potencia para activar ciertos actuadores.</p>
+        
+        <h4>Medidas de Prevención:</h4>
+        <ul>
+            <li><strong>Bloqueo y Etiquetado (LOTO):</strong> Es fundamental asegurar la <strong>desconexión total de la energía</strong> de la máquina y del propio PLC antes de realizar cualquier intervención de cableado o mantenimiento.</li>
+            <li><strong>Uso de Bajas Tensiones:</strong> Siempre que sea posible, utilizar módulos de E/S que trabajen con <strong>tensiones de seguridad (24V DC)</strong> para la lógica de control.</li>
+            <li><strong>Conexión a Tierra:</strong> Asegurar una correcta y permanente conexión a tierra de todos los componentes metálicos del *rack* y del cuadro eléctrico.</li>
+        </ul>
+
+        <hr>
+
+        <h3>2. Riesgos por Movimiento Inesperado de Máquina</h3>
+        <p>Este es el riesgo más grave asociado a la automatización. Un error en el programa del PLC o un fallo del hardware de seguridad puede causar un movimiento incontrolado.</p>
+        
+        <h4>Medidas de Prevención:</h4>
+        <ul>
+            <li><strong>Parada de Emergencia (Seta):</strong> Implementación de <strong>circuitos de seguridad cableados</strong> (o PLCs de seguridad dedicados) que actúen independientemente del PLC de control principal. La parada de emergencia debe cortar la potencia del actuador directamente. </li>
+            <li><strong>Control de Acceso:</strong> Uso de <strong>barreras fotoeléctricas, cortinas de seguridad o enclavamientos de puertas</strong> que detengan la máquina automáticamente si un operario entra en la zona de peligro.</li>
+            <li><strong>Modos de Operación Segura:</strong> Restringir la velocidad y la potencia de la máquina durante los modos de programación o mantenimiento.</li>
+        </ul>
+
+        <hr>
+
+        <h3>3. Riesgos de Software y Programación</h3>
+        <p>Los errores de lógica o las fallas en el código pueden llevar a situaciones peligrosas.</p>
+        
+        <h4>Medidas de Prevención:</h4>
+        <ul>
+            <li><strong>Uso de PLCs de Seguridad:</strong> Utilizar un <strong>PLC de Seguridad (Safety PLC)</strong> o relés de seguridad dedicados para gestionar las funciones críticas de protección. Estos cumplen con normas específicas (IEC 62061/ISO 13849).</li>
+            <li><strong>Verificación y Validación:</strong> Realizar una <strong>validación rigurosa del programa</strong> antes de su puesta en marcha, especialmente en la lógica que controla la secuencia de movimientos críticos.</li>
+            <li><strong>Gestión de Cambios:</strong> Documentar y controlar estrictamente cualquier modificación del código del PLC.</li>
+        </ul>
+        
+        <hr>
+
+        <h3>4. Riesgos por Mantenimiento y Puesta en Marcha</h3>
+        <p>Los trabajos de mantenimiento o la resolución de problemas en caliente (*troubleshooting*) son momentos críticos.</p>
+        
+        <h4>Medidas de Prevención:</h4>
+        <ul>
+            <li><strong>Procedimientos Claros:</strong> Establecer <strong>procedimientos de trabajo seguros</strong> y escritos para la intervención, prueba y re-puesta en marcha de la maquinaria.</li>
+            <li><strong>Formación Específica:</strong> El personal que interactúa con PLCs debe tener una <strong>formación especializada</strong> en el funcionamiento seguro de los equipos de control y las normativas de seguridad aplicables.</li>
+            <li><strong>Herramientas Aisladas:</strong> Utilizar herramientas con aislamiento eléctrico adecuado cuando se trabaja cerca de cuadros energizados.</li>
+        </ul>
+
+    </div>
+
+</body>
+</html>
