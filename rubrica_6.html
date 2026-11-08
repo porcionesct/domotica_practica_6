@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rúbrica de Evaluación Práctica 6 (Instalación domótica de vivienda)</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        .level-4 { background-color: #d4edda; } /* Excelente - Verde claro */
+        .level-3 { background-color: #d6e9fb; } /* Avanzado - Azul claro */
+        .level-2 { background-color: #fff3cd; } /* Adecuado - Amarillo claro */
+        .level-1 { background-color: #f8d7da; } /* Iniciado - Rojo claro */
+
+        .rubric-table th:nth-child(1), .rubric-table td:nth-child(1) { width: 20%; }
+        .rubric-table th:nth-child(2), .rubric-table td:nth-child(2) { width: 20%; }
+        .rubric-table th:nth-child(3), .rubric-table td:nth-child(3) { width: 20%; }
+        .rubric-table th:nth-child(4), .rubric-table td:nth-child(4) { width: 20%; }
+        .rubric-table th:nth-child(5), .rubric-table td:nth-child(5) { width: 20%; }
+
+        .etiqueta {
+            display: inline-block;
+            font-size: 0.75em;
+            font-weight: bold;
+            padding: 2px 8px;
+            margin: 4px 4px 0 0;
+            border-radius: 10px;
+            border: 1px solid;
+        }
+        .etiqueta-peso { color: #6f42c1; border-color: #6f42c1; background: #f3eefc; }
+        .etiqueta-ce   { color: #004a99; border-color: #004a99; background: #eef4fb; }
+        .etiqueta-ra   { color: #1e7e34; border-color: #1e7e34; background: #eaf6ec; }
+
+        .puntos { display: block; font-size: 1.4em; font-weight: bold; margin-bottom: 4px; }
+        .level-4 .puntos { color: #1e7e34; }
+        .level-3 .puntos { color: #0059b3; }
+        .level-2 .puntos { color: #b8860b; }
+        .level-1 .puntos { color: #c82333; }
+
+        .weight-table th:nth-child(n+2), .weight-table td:nth-child(n+2) { text-align: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Autómatas y relés programables</h1>
+        <p>Práctica 6. Instalación domótica de vivienda. Rúbrica de Evaluación</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Práctica 6 (Domótica)</a></li>
+            <li class="active"><a href="rubrica_6.html">Rúbrica evaluación</a></li>
+            <li><a href="automata_6.html">Autómata programable</a></li>
+            <li><a href="logo_6.html">Logo</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+            <li><a href="prl.html">Seguridad y PRL</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Rúbrica de Evaluación Práctica 6: Instalación domótica de vivienda</h2>
+
+        <p>UD.2 · Prácticas de taller. Control domótico de vivienda. Esta rúbrica evalúa el funcionamiento del circuito, la coordinación de las áreas de gestión, la puesta en servicio de la instalación y la simulación del circuito.</p>
+
+        <div class="section">
+            <h3 class="section-header">1. Criterios y Niveles de Logro</h3>
+            <table class="rubric-table">
+                <thead>
+                    <tr>
+                        <th>Criterio de evaluación</th>
+                        <th>Excelente (10)</th>
+                        <th>Avanzado (7)</th>
+                        <th>Adecuado (4)</th>
+                        <th>Iniciado (1)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>1. Funcionamiento</strong><br>
+                            <span class="etiqueta etiqueta-peso">25%</span>
+                            <span class="etiqueta etiqueta-ce">CE: 3.6</span>
+                            <span class="etiqueta etiqueta-ra">RA: RA3</span>
+                        </td>
+                        <td class="level-4"><span class="puntos">10</span>Funciona el circuito realizado, utiliza los esquemas para realizar los montajes, trabaja de forma autónoma y cumple con el tiempo establecido.</td>
+                        <td class="level-3"><span class="puntos">7</span>Suele funcionar el circuito realizado, utiliza los esquemas para realizar los montajes y suele trabajar de forma autónoma y cumple con el tiempo establecido.</td>
+                        <td class="level-2"><span class="puntos">4</span>A veces funciona el circuito realizado, no utiliza los esquemas para realizar los montajes y no trabaja de forma autónoma y no cumple con el tiempo establecido.</td>
+                        <td class="level-1"><span class="puntos">1</span>No suele funcionar el circuito realizado, no utiliza los esquemas para realizar los montajes, no trabaja de forma autónoma y no cumple con el tiempo establecido.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>2. Coordinación</strong><br>
+                            <span class="etiqueta etiqueta-peso">25%</span>
+                            <span class="etiqueta etiqueta-ce">CE: 6.1</span>
+                            <span class="etiqueta etiqueta-ra">RA: RA6</span>
+                        </td>
+                        <td class="level-4"><span class="puntos">10</span>Ajusta correctamente todas las áreas de gestión, logrando una coordinación óptima entre ellas y garantizando el funcionamiento conjunto del sistema.</td>
+                        <td class="level-3"><span class="puntos">7</span>Ajusta adecuadamente las áreas de gestión y consigue que funcionen coordinadamente, aunque presenta pequeños desajustes que no afectan significativamente al funcionamiento.</td>
+                        <td class="level-2"><span class="puntos">4</span>Ajusta parcialmente las áreas de gestión, pero existen desajustes que dificultan la coordinación y necesita ayuda para corregirlos.</td>
+                        <td class="level-1"><span class="puntos">1</span>No consigue ajustar correctamente las áreas de gestión, provocando problemas de coordinación que afectan al funcionamiento del sistema.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>3. Puesta en servicio</strong><br>
+                            <span class="etiqueta etiqueta-peso">25%</span>
+                            <span class="etiqueta etiqueta-ce">CE: 5.6</span>
+                            <span class="etiqueta etiqueta-ra">RA: RA6</span>
+                        </td>
+                        <td class="level-4"><span class="puntos">10</span>Realiza todas las pruebas, comprobaciones y ajustes con precisión, siguiendo rigurosamente la documentación técnica. Verifica el correcto funcionamiento de la instalación y garantiza que está lista para su puesta en servicio.</td>
+                        <td class="level-3"><span class="puntos">7</span>Realiza correctamente las pruebas y comprobaciones, siguiendo la documentación técnica, aunque presenta pequeños errores que corrige adecuadamente.</td>
+                        <td class="level-2"><span class="puntos">4</span>Realiza las pruebas y comprobaciones básicas, pero comete algunos errores o necesita ayuda para efectuar los ajustes y verificar el funcionamiento de la instalación.</td>
+                        <td class="level-1"><span class="puntos">1</span>No realiza las pruebas, comprobaciones y ajustes, no sigue adecuadamente la documentación técnica y no consigue verificar el funcionamiento de la instalación.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>4. Simulación</strong><br>
+                            <span class="etiqueta etiqueta-peso">25%</span>
+                            <span class="etiqueta etiqueta-ce">CE: 2.9</span>
+                            <span class="etiqueta etiqueta-ra">RA: RA2</span>
+                        </td>
+                        <td class="level-4"><span class="puntos">10</span>Realiza la simulación con un circuito bien diseñado, trabaja de forma autónoma y cumple con el tiempo establecido.</td>
+                        <td class="level-3"><span class="puntos">7</span>Realiza la simulación del circuito, trabaja de forma autónoma y cumple con el tiempo establecido.</td>
+                        <td class="level-2"><span class="puntos">4</span>Realiza la simulación del circuito, necesita ayuda para su finalización y no cumple con el tiempo establecido.</td>
+                        <td class="level-1"><span class="puntos">1</span>La simulación del circuito es incorrecta.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3 class="section-header">2. Ponderación y Cálculo de la Nota Final</h3>
+            <p>La nota final se calcula multiplicando la puntuación obtenida en cada criterio por su peso porcentual y sumando los resultados.</p>
+
+            <table class="weight-table">
+                <thead>
+                    <tr>
+                        <th>Criterio</th>
+                        <th>CE</th>
+                        <th>RA</th>
+                        <th>Puntuación Máxima</th>
+                        <th>Peso (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1. Funcionamiento</td><td>3.6</td><td>RA3</td><td>10</td><td>25%</td></tr>
+                    <tr><td>2. Coordinación</td><td>6.1</td><td>RA6</td><td>10</td><td>25%</td></tr>
+                    <tr><td>3. Puesta en servicio</td><td>5.6</td><td>RA6</td><td>10</td><td>25%</td></tr>
+                    <tr><td>4. Simulación</td><td>2.9</td><td>RA2</td><td>10</td><td>25%</td></tr>
+                    <tr style="font-weight: bold;"><td>Total</td><td></td><td></td><td>10</td><td>100%</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Fórmula de Cálculo:</h4>
+            <p><strong>Nota Final = (C1 × 0,25) + (C2 × 0,25) + (C3 × 0,25) + (C4 × 0,25)</strong></p>
+            <p>Donde C1, C2, C3 y C4 son las puntuaciones obtenidas (10, 7, 4 ó 1) en cada criterio.</p>
+            <p>Excelente = 10 pts · Avanzado = 7 pts · Adecuado = 4 pts · Iniciado = 1 pt</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

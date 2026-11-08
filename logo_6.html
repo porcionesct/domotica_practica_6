@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autómatas y relé programable: Logo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1> Autómatas y relés programables</h1>
+        <p>Práctica 6. Instalación domótica de vivienda. Logo</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Práctica 6 (Domótica)</a></li>
+            <li><a href="rubrica_6.html">Rúbrica evaluación</a></li> 
+            <li><a href="automata_6.html">Autómata programable</a></li>
+            <li class="active"><a href="logo_6.html">Logo</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+            <li><a href="glosario.html">Glosario</a></li>
+            <li><a href="prl.html">Seguridad y PRL</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+<h2>6.- Instalación domótica de vivienda</h2>
+
+        <div class="section">
+                        
+<h3 class="section-header">1. Asignación de señales en el relé programable.</h3>
+
+          <ul>
+           <p><strong>Entradas digitales</strong></p>
+           <li>I1: Pulsador marcha (S1) — contacto NO.</li>
+           <li>I2: Pulsador paro (S1) — contacto NC.</li>
+           <li>I3: Pulsador marcha (S2) — contacto NO.</li>
+           <li>I4: Pulsador paro (S2) — contacto NC.</li>
+           <li>I5: Pulsador marcha (S3) — contacto NO.</li>
+           <li>I6: Pulsador paro (S3) — contacto NC.</li>
+           <li>I7: Pulsador marcha (S4) — contacto NO. Subir persiana.</li>
+           <li>I8: Pulsador paro (S4) — contacto NC. Final de carrera de subida.</li>
+           <li>I9: Detector de movimiento (DM) — entrada I1 del módulo DM8 230R.</li>
+           <li>I10: Pulsador marcha (S5) — contacto NO. Bajar persiana (entrada I2 del módulo).</li>
+           <li>I11: Pulsador paro (S5) — contacto NC. Final de carrera de bajada (entrada I3 del módulo).</li>
+
+           <p><strong>Salidas digitales</strong></p>
+           <li>Q1: Piloto verde (PV).</li>
+           <li>Q2: Piloto rojo (PR).</li>
+           <li>Q3: Piloto verde alarma (PVA).</li>
+           <li>Q4: Lámpara de alarma (L1).</li>
+           <li>Q5: Lámpara del detector (L2) — salida Q1 del módulo.</li>
+           <li>Q6: Contactor KM1 — subir persiana (salida Q2 del módulo).</li>
+           <li>Q7: Contactor KM2 — bajar persiana (salida Q3 del módulo).</li>
+           <li>Q8: Piloto de alarma técnica (PAT) — salida Q4 del módulo (salida 8).</li>
+
+           <p><strong>Entradas de red</strong></p>
+           <li>NI1: Señal de alarmas técnicas — enviada por red Ethernet desde el segundo LOGO!.</li>
+          </ul>
+
+<h3 class="section-header">2. Programa en FUP (LOGO!Soft Comfort)</h3>
+            <table>
+                <thead>
+                    <tr><th>Bloque / Segmento</th><th>Lógica</th><th>Función</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>B001 RS</strong></td><td>S = I1 &nbsp;|&nbsp; R = NOT I2</td><td>Circuito activado → Q1; NOT B001 → Q2</td></tr>
+                    <tr><td><strong>B002 – B005</strong></td><td>Igual que en la práctica 5</td><td>Funciones de S2 sobre L2 (pulsación corta y larga)</td></tr>
+                    <tr><td><strong>B006 AND / OR</strong></td><td>Q5 = B001 AND (I9 OR B004 OR B005)</td><td>Lámpara L2: detector o S2</td></tr>
+                    <tr><td><strong>B007 / B008</strong></td><td>Igual que en la práctica 5</td><td>Activación de la alarma con S3 y disparo de la alarma (B008)</td></tr>
+                    <tr><td><strong>B009 RS</strong></td><td>S = I7 AND B001 AND NOT Q7 &nbsp;|&nbsp; R = NOT I8 OR NOT B001</td><td>Subida de la persiana → Q6</td></tr>
+                    <tr><td><strong>B010 RS</strong></td><td>S = I10 AND B001 AND NOT Q6 &nbsp;|&nbsp; R = NOT I11 OR NOT B001</td><td>Bajada de la persiana → Q7</td></tr>
+                    <tr><td><strong>B011 Temporizador anual</strong></td><td>ON = 01-07, OFF = 15-07, «cada año» activado</td><td>Periodo del 1 al 15 de julio</td></tr>
+                    <tr><td><strong>B012 Temporizador semanal</strong></td><td>Leva 1: lunes a domingo, ON = 10:00, OFF = 11:00</td><td>Franja de 10:00 a 11:00</td></tr>
+                    <tr><td><strong>B013 AND</strong></td><td>B011 AND B012 AND B001</td><td>Simulación de presencia</td></tr>
+                    <tr><td><strong>B015 OR</strong></td><td>Q4 = B008 OR B013</td><td>Lámpara L1: disparo de la alarma o simulación de presencia</td></tr>
+                    <tr><td><strong>B014 Generador de impulsos asíncrono</strong></td><td>En = NI1, TH = 0,5 s, TL = 0,5 s</td><td>Alarma técnica: PAT intermitente → Q8</td></tr>
+                </tbody>
+            </table>
+            <p>Antes de probar la simulación hay que poner en hora el LOGO! (<em>Configurar → Ajustar reloj</em>). En LOGO!Soft Comfort se puede comprobar adelantando la fecha y la hora del simulador. La alarma técnica no depende de B001, así que se señaliza aunque el circuito esté desactivado.</p>
+            <p><strong>Comunicación entre los dos LOGO!:</strong> los dos equipos deben tener puerto Ethernet (LOGO! 0BA7 o posterior) y estar en la misma red, con direcciones IP del mismo rango. En LOGO!Soft Comfort se añaden los dos módulos en la vista de red y se crea una conexión entre ellos: la salida (o marca) de alarma técnica del segundo LOGO! se envía como salida de red y en este LOGO! se recibe en la entrada de red NI1.</p>
+
+<h3 class="section-header">3. Esquema</h3>
+<p><strong>Esquema multifilar de la práctica 6.</strong></p>
+        
+<div class="automata-image">
+     <img id="myImg" src="images_1/multifilar_logo_6.png" alt="Relé programable LOGO!" style="cursor: pointer;">
+</div>
+      
+          </div>
+<div id="myModal" class="modal">
+
+  <span class="close">&times;</span>
+
+  <img class="modal-content" id="img01">
+
+  <div id="caption"></div>
+
+</div>
+<script>
+// Obtener el modal
+var modal = document.getElementById("myModal");
+
+// Obtener la imagen y el elemento dentro del modal
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Obtener el elemento <span> que cierra el modal
+var span = document.getElementsByClassName("close")[0];
+
+// Cuando el usuario hace clic en <span> (x), cierra el modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+
+// Opcional: Cerrar el modal al hacer clic en cualquier parte fuera de la imagen
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</body>
+</html>
